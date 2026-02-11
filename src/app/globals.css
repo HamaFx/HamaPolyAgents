@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: 7 11 20;
+  --bg-card: 15 21 36;
+  --bg-card-hover: 22 32 58;
+  --bg-input: 26 39 68;
+  --text-primary: 242 246 255;
+  --text-secondary: 182 195 220;
+  --text-muted: 111 125 154;
+  --accent-green: 22 199 132;
+  --accent-red: 255 77 103;
+  --accent-blue: 79 117 255;
+  --accent-yellow: 249 190 61;
+  --accent-cyan: 54 208 255;
+  --border: 29 42 72;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: radial-gradient(circle at top right, rgba(79, 117, 255, 0.2), transparent 38%),
+    radial-gradient(circle at 20% 10%, rgba(54, 208, 255, 0.14), transparent 42%),
+    rgb(var(--bg-primary));
+  color: rgb(var(--text-primary));
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@layer components {
+  .surface {
+    @apply rounded-2xl border border-border bg-bgCard/90 shadow-panel backdrop-blur;
+  }
+
+  .surface-hover {
+    @apply transition-colors hover:bg-bgCardHover;
+  }
+
+  .subtle-text {
+    @apply text-sm text-textSecondary;
+  }
+
+  .headline {
+    font-family: var(--font-display), serif;
+    letter-spacing: 0.02em;
+  }
+}
